@@ -64,7 +64,7 @@ class Entry
       end
     end
 
-    # get on by idea
+    # get one (by id)
     def self.find(id)
       results = DB.exec(
         <<-SQL
@@ -87,6 +87,11 @@ class Entry
         "turbidity" => results.first["turbidity"].to_i,
         "suspended_solids" => results.first["suspended_solids"].to_i
       }
+    end
+
+    # create one
+    def self.create
+      result = DB.exec()
     end
 
     # delete one (by id)
@@ -149,4 +154,8 @@ class Entry
       }
     end
 
+    # update one (by id)
+    def self.put(id)
+
+    end  
 end
