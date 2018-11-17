@@ -18,14 +18,23 @@ class Entry
       results = DB.exec()
     end
 
-    # get on by idea
+    # get one (by id)
     def self.find(id)
+      result = DB.exec()
+    end
+
+    # create one
+    def self.create
       result = DB.exec()
     end
 
     # delete one (by id)
     def self.delete(id)
-      
+
     end
 
+    # update one (by id)
+    def self.put(id)
+
+    end  
 end
