@@ -23,4 +23,9 @@ class Entry
       result = DB.exec()
     end
 
+    # delete one (by id)
+    def self.delete(id)
+      
+    end
+
 end
