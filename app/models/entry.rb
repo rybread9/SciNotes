@@ -91,7 +91,13 @@ class Entry
 
     # delete one (by id)
     def self.delete(id)
-
+      results = DB.exec(
+        <<-SQL
+          DELETE FROM entries
+          WHERE id=#{id};
+        SQL
+      )
+      return {"deleted" => true}
     end
 
 end
