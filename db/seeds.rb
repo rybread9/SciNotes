@@ -16,7 +16,7 @@ sediment_size INT,
 foliage_cover INT,
 invertebrates VARCHAR(300),
 vertebrates VARCHAR(300),
-sediment_composition VARCHAR,
+sediment_composition VARCHAR(300),
 dissolved_oxygen INT,
 turbidity INT,
 suspended_solids INT);

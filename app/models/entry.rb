@@ -25,7 +25,7 @@ class Entry
 
     # delete one (by id)
     def self.delete(id)
-      
+
     end
 
 end
