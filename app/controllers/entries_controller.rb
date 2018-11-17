@@ -21,4 +21,8 @@ class EntriesController < ApplicationController
     render json: Entry.create(params["entry"])
   end
 
+  def update
+    render json: Entry.update(params["id"], params["entry"])
+  end
+
 end
