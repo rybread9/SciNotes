@@ -11,4 +11,9 @@ class EntriesController < ApplicationController
     render json: Entry.find(params["id"])
   end
 
+  # delete on (by id)
+  def delete
+    render json: Entry.delete(params["id"])
+  end
+
 end
