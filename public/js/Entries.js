@@ -5,15 +5,29 @@ class Entries extends React.Component {
       entriesListIsVisible: true,
       addEntryIsVisible: false,
       entryIsVisible: false,
-      editEntryIsVisible: false
+      editEntryIsVisible: false,
+      entries: []
     }
       this.toggleState = this.toggleState.bind(this)
+      this.getEntries = this.getEntries.bind(this)
     }
     toggleState (st1, st2) {
       this.setState({
         [st1]: !this.state[st1],
         [st2]: !this.state[st2]
       })
+  }
+  componentDidMount() {
+    this.getEntries()
+  }
+  getEntries () {
+    fetch('/entries')
+      .then( response => response.json())
+      .then( data => {
+        this.setState({
+          entries: data
+        })
+      }).catch(error => console.log(error))
   }
   render(){
     return(
@@ -31,6 +45,7 @@ class Entries extends React.Component {
           this.state.entriesListIsVisible
           ? <EntriesList
               toggleState={this.toggleState}
+              entries={this.state.entries}
             />
           : ''
         }
