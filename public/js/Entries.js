@@ -6,10 +6,12 @@ class Entries extends React.Component {
       addEntryIsVisible: false,
       entryIsVisible: false,
       editEntryIsVisible: false,
-      entries: []
+      entries: [],
+      entry: {}
     }
       this.toggleState = this.toggleState.bind(this)
       this.getEntries = this.getEntries.bind(this)
+      this.getEntry = this.getEntry.bind(this)
     }
     toggleState (st1, st2) {
       this.setState({
@@ -19,6 +21,9 @@ class Entries extends React.Component {
   }
   componentDidMount() {
     this.getEntries()
+  }
+  getEntry(entry) {
+    this.setState({entry: entry})
   }
   getEntries () {
     fetch('/entries')
@@ -46,6 +51,7 @@ class Entries extends React.Component {
           ? <EntriesList
               toggleState={this.toggleState}
               entries={this.state.entries}
+              getEntry={this.getEntry}
             />
           : ''
         }
@@ -60,6 +66,7 @@ class Entries extends React.Component {
           this.state.entryIsVisible
           ? <Entry
               toggleState={this.toggleState}
+              entry={this.state.entry}
             />
           : ''
         }
