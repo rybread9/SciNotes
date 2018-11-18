@@ -3,7 +3,7 @@ class App extends React.Component {
     return (
       <div className='section'>
         <h1 className='title'>SciNotes</h1>
-        <div className='columns'>
+        <div className='column'>
           <Entries />
         </div>
       </div>
