@@ -9,6 +9,8 @@ class Entries extends React.Component {
 
         <h1>Data Entries</h1>
 
+        <EntryForm />
+
       </div>
     )
   }
