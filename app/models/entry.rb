@@ -157,5 +157,5 @@ class Entry
     # update one (by id)
     def self.put(id)
 
-    end  
+    end
 end
