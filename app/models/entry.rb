@@ -61,10 +61,10 @@ class Entry
           "meters_downstream" => result["meters_downstream"].to_i,
           "stream_width" => result["stream_width"].to_i,
           "stream_depth" => result["stream_depth"].to_i,
-          "water_temperature" => result["water_temperature"].to_dec,
+          "water_temperature" => result["water_temperature"].to_f,
           "water_turbidity" => result["water_turbidity"].to_i,
           "water_suspended_solids" => result["water_suspended_solids"].to_i,
-          "water_ph" => result["water_ph"].to_dec,
+          "water_ph" => result["water_ph"].to_f,
           "sediment_size" => result["sediment_size"].to_i,
           "sediment_composition" => result["sediment_composition"],
           "foliage_cover" => result["foliage_cover"].to_i,
@@ -138,20 +138,20 @@ class Entry
             invertebrates,
             vertebrates,
             additional_observations)
-          VALUES ('#{opts["title"]'},
+          VALUES ('#{opts["title"]}',
                   '#{opts["location"]}',
                   '#{opts["air_temperature"]}',
                   #{opts["meters_downstream"]},
                   #{opts["stream_width"]},
                   #{opts["stream_depth"]},
-                  #{otps["water_temperature"]},
+                  #{opts["water_temperature"]},
                   #{opts["water_turbidity"]},
                   #{opts["water_suspended_solids"]},
-                  #{opts["water_ph"]}
+                  #{opts["water_ph"]},
                   #{opts["sediment_size"]},
                   '#{opts["sediment_composition"]}',
                   #{opts["foliage_cover"]},
-                  '#{opts["flora"]}'
+                  '#{opts["flora"]}',
                   '#{opts["invertebrates"]}',
                   '#{opts["vertebrates"]}',
                   '#{opts["additional_observations"]}')
@@ -178,14 +178,14 @@ class Entry
         "id" => results.first["id"].to_i,
         "title" => results.first["title"],
         "location" => results.first["location"],
-        "air_temperature" => results.first["air_temperature"].to_i,
+        "air_temperature" => results.first["air_temperature"].to_f,
         "meters_downstream" => results.first["meters_downstream"].to_i,
         "stream_width" => results.first["stream_width"].to_i,
         "stream_depth" => results.first["stream_depth"].to_i,
-        "water_temperature" => results.first["water_temperature"].to_i,
+        "water_temperature" => results.first["water_temperature"].to_f,
         "water_turbidity" => results.first["water_turbidity"].to_i,
         "water_suspended_solids" => results.first["water_suspended_solids"].to_i,
-        "water_ph" => results.first["water_ph"].to_i,
+        "water_ph" => results.first["water_ph"].to_f,
         "sediment_size" => results.first["sediment_size"].to_i,
         "sediment_composition" => results.first["sediment_composition"],
         "foliage_cover" => results.first["foliage_cover"].to_i,
@@ -220,8 +220,4 @@ class Entry
       }
     end
 
-    # update one (by id)
-    def self.put(id)
-
-    end
 end
