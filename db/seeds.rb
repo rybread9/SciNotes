@@ -15,7 +15,7 @@
 
 CREATE TABLE entries (
   id SERIAL,
-  title VARCHAR(60),
+  title VARCHAR(200),
   location VARCHAR(60),
   air_temperature DEC,
   meters_downstream INT,
