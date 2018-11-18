@@ -107,11 +107,6 @@ class Entry
       }
     end
 
-    # create one
-    def self.create
-      result = DB.exec()
-    end
-
     # delete one (by id)
     def self.delete(id)
       results = DB.exec(
