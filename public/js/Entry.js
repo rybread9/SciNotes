@@ -32,7 +32,8 @@ class Entry extends React.Component {
             </div>
           </div>
           <EntryForm />
-        </div>  
+        </div>
+      </div>   
     )
   }
 }
