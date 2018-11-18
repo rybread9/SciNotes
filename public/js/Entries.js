@@ -1,29 +1,53 @@
 class Entries extends React.Component {
-  // constructor(props){
-  //   super(props)
-  //
-  // }
+  constructor(props){
+    super(props)
+    this.state = {
+      entriesListIsVisible: true,
+      addEntryIsVisible: false,
+      entryIsVisible: false,
+      editEntryIsVisible: false
+    }
+      this.toggleState = this.toggleState.bind(this)
+    }
+    toggleState (st1, st2) {
+      this.setState({
+        [st1]: !this.state[st1],
+        [st2]: !this.state[st2]
+      })
+  }
   render(){
     return(
-      <div className="container">
-        <h1>Data Entries</h1>
-        <button className='button is-success'>Add an Entry</button>
-        <table>
-          <tbody>
-            <tr>
-              <td className='entry'>
-                <h3>Test Entry</h3>
-              </td>
-              <td>
-                  <button className='button is-warning is-small'>Edit</button>
-              </td>
-              <td>
-                  <button className='button is-warning is-small'>Delete</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <EntryForm />
+      <div>
+        <h2>Entries</h2>
+        {
+          this.state.entriesListIsVisible
+          ? <button
+              className='button is-success' onClick={()=>this.toggleState('addEntryIsVisible', 'entriesListIsVisible')}>
+                Add an Entry
+            </button>
+          : ''
+        }
+        {
+          this.state.entriesListIsVisible
+          ? <EntriesList
+              toggleState={this.toggleState}
+            />
+          : ''
+        }
+        {
+          this.state.addEntryIsVisible
+          ? <EntryForm
+              toggleState={this.toggleState}
+            />
+          : ''
+        }
+        {
+          this.state.entryIsVisible
+          ? <Entry
+              toggleState={this.toggleState}
+            />
+          : ''
+        }
       </div>
     )
   }
