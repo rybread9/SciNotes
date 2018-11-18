@@ -9,8 +9,6 @@ render(){
             return (
               <tr>
                 <td onClick={()=> {this.props.getEntry(entry); this.props.toggleState('entriesListIsVisible', 'entryIsVisible')}}>
-                </td>
-                <td className='entry' onClick={()=> {this.props.getEntry(entry); this.props.toggleState('entriesListIsVisible', 'entryIsVisible')}}>
                   <h3>{entry.name}</h3>
                 </td>
                 <td>
