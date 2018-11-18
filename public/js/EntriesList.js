@@ -17,7 +17,7 @@ render(){
                     <button className='button is-warning is-small'>Edit</button>
                 </td>
                 <td>
-                    <button className='button is-warning is-small'>Delete</button>
+                    <button className='button is-warning is-small' onClick={()=> this.props.deleteEntry(entry, index)}>Delete</button>
                 </td>
               </tr>
             )

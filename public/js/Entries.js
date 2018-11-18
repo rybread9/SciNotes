@@ -13,17 +13,23 @@ class Entries extends React.Component {
       this.getEntries = this.getEntries.bind(this)
       this.getEntry = this.getEntry.bind(this)
     }
-    toggleState (st1, st2) {
-      this.setState({
-        [st1]: !this.state[st1],
-        [st2]: !this.state[st2]
-      })
-  }
+
   componentDidMount() {
     this.getEntries()
   }
-  getEntry(entry) {
-    this.setState({entry: entry})
+  deleteEntry(entry, index) {
+    fetch('entries/' + entry.id,
+      {
+          method: 'DELETE'
+      })
+      .then(data => {
+        this.setState({
+          entries: [
+            ...this.state.entries.slice(0, index),
+            ...this.state.entries.slice(index + 1)
+          ]
+        })
+      })
   }
   getEntries () {
     fetch('/entries')
@@ -34,6 +40,15 @@ class Entries extends React.Component {
         })
       }).catch(error => console.log(error))
   }
+  getEntry(entry) {
+    this.setState({entry: entry})
+  }
+  toggleState (st1, st2) {
+    this.setState({
+      [st1]: !this.state[st1],
+      [st2]: !this.state[st2]
+    })
+}
   render(){
     return(
       <div>
@@ -52,6 +67,7 @@ class Entries extends React.Component {
               toggleState={this.toggleState}
               entries={this.state.entries}
               getEntry={this.getEntry}
+              deleteEntry={this.deleteEntry}
             />
           : ''
         }
