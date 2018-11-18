@@ -2,7 +2,6 @@ class EntryForm extends React.Component {
   render(){
     return(
       <div className="field">
-
         <form>
           <label className='label' for='title'>Title: </label>
           <div className='control'>
