@@ -31,7 +31,7 @@ class Entry extends React.Component {
             </div>
             </div>
           </div>
-          <EntryForm />
+          <EntryForm entry={this.props.entry} handleSubmit={this.props.handleSubmit}/>
         </div>
       </div>
     )

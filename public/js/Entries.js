@@ -10,13 +10,17 @@ class Entries extends React.Component {
       entry: {}
     }
       this.toggleState = this.toggleState.bind(this)
-      this.getEntries = this.getEntries.bind(this)
       this.getEntry = this.getEntry.bind(this)
+      this.deleteEntry = this.deleteEntry.bind(this)
+      this.handleCreate = this.handleCreate.bind(this)
+      this.handleCreateSubmit = this.handleCreateSubmit.bind(this)
+      this.handleUpdateSubmit = this.handleUpdateSubmit.bind(this)
     }
 
   componentDidMount() {
-    this.getEntries()
+    this.getEntries();
   }
+
   deleteEntry(entry, index) {
     fetch('entries/' + entry.id,
       {
@@ -31,6 +35,55 @@ class Entries extends React.Component {
         })
       })
   }
+
+  handleCreate (entry) {
+    const updatedEntries = this.state.entries
+    updatedEntries.unshift(entry)
+    this.setState({entries: updatedEntries})
+  }
+
+  handleCreateSubmit (entry) {
+    fetch('/entries', {
+      body: JSON.stringify(entry),
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(createdEntry => {
+        return createdEntry.json()
+      })
+      .then(jsonedEntry => {
+        this.handleCreate(jsonedEntry)
+        this.toggleState('addEntryIsVisible', 'entriesListIsVisible')
+      })
+      .catch(error => console.log(error))
+  }
+
+  handleUpdateSubmit (entry) {
+    fetch('/entries/' + entry.id, {
+      body: JSON.stringify(entry),
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(updatedEntry => {
+        return updatedEntry.json()
+      })
+      .then(jsonedEntry => {
+        this.getEntries()
+        this.toggleState('entriesListIsVisible', 'entryIsVisible')
+      })
+      .catch(error => console.log(error))
+  }
+
+  getEntry(entry) {
+    this.setState({entry: entry})
+  }
+
   getEntries () {
     fetch('/entries')
       .then( response => response.json())
@@ -40,18 +93,17 @@ class Entries extends React.Component {
         })
       }).catch(error => console.log(error))
   }
-  getEntry(entry) {
-    this.setState({entry: entry})
-  }
+
   toggleState (st1, st2) {
     this.setState({
       [st1]: !this.state[st1],
       [st2]: !this.state[st2]
     })
-}
+  }
+
   render(){
     return(
-      <div>
+      <div className='column'>
         <h2>Entries</h2>
         {
           this.state.entriesListIsVisible
@@ -75,6 +127,8 @@ class Entries extends React.Component {
           this.state.addEntryIsVisible
           ? <EntryForm
               toggleState={this.toggleState}
+              handleCreate={this.handleCreate}
+              handleSubmit={this.handleCreateSubmit}
             />
           : ''
         }
@@ -83,6 +137,7 @@ class Entries extends React.Component {
           ? <Entry
               toggleState={this.toggleState}
               entry={this.state.entry}
+              handleSubmit={this.handleUpdateSubmit}
             />
           : ''
         }

@@ -119,6 +119,8 @@ class Entry
     end
 
     def self.create(opts)
+      # opts['example']=newvalue
+      p opts
       results = DB.exec(
         <<-SQL
           INSERT INTO entries
