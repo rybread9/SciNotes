@@ -20,7 +20,7 @@ CREATE TABLE entries (
   sediment_type VARCHAR(25),
   temperature INT,
   foliage_cover INT,
-  flora VARCHAR(60),
+  flora VARCHAR(200),
   fauna VARCHAR(60),
   additional_observations VARCHAR(300)
 )
