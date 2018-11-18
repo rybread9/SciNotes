@@ -107,11 +107,6 @@ class Entry
       }
     end
 
-    # create one
-    def self.create
-      result = DB.exec()
-    end
-
     # delete one (by id)
     def self.delete(id)
       results = DB.exec(
@@ -146,7 +141,7 @@ class Entry
             additional_observations)
           VALUES ('#{opts["title"]}',
                   '#{opts["location"]}',
-                  '#{opts["air_temperature"]}',
+                  #{opts["air_temperature"]},
                   #{opts["meters_downstream"]},
                   #{opts["stream_width"]},
                   #{opts["stream_depth"]},
