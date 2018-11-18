@@ -4,7 +4,7 @@ class Entry
     # ==================================================
 
     # add attribute readers for instance access
-    attr_reader :id, :meters_downstream, :stream_width, :stream_depth, :sediment_size, :foliage_cover, :invertebrates, :vertebrates, :sediment_composition, :dissolved_oxygen, :turbidity, :suspended_solids
+    attr_reader :id, :title, :location, :air_temperature, :meters_downstream, :stream_width, :stream_depth, :water_temperature, :water_turbidity, :water_suspended_solids, :water_ph, :sediment_size, :sediment_composition, :foliage_cover, :flora, :invertebrates, :vertebrates, :additional_observations
 
     #connect to postgres
     DB = PG.connect({
@@ -16,17 +16,23 @@ class Entry
     # initialize options hash
     def initialize(opts = {}, id=nil)
       @id = id_to_i
+      @title = opts["title"]
+      @location = opts["location"]
+      @air_temperature = opts["air_temperature"].to_dec
       @meters_downstream = opts["meters_downstream"].to_i
       @stream_width = opts["stream_width"].to_i
       @stream_depth = opts["stream_depth"].to_i
+      @water_temperature = opts["water_temperature"].to_dec
+      @water_turbidity = opts["water_turbidity"].to_i
+      @water_suspended_solids = opts["water_suspended_solids"].to_i
+      @water_ph = opts["water_ph"].to_dec
       @sediment_size = opts["sediment_size"].to_i
+      @sediment_composition = opts["sediment_composition"]
       @foliage_cover = opts["foliage_cover"].to_i
+      @flora = opts["flora"]
       @invertebrates = opts["invertebrates"]
       @vertebrates = opts["vertebrates"]
-      @sediment_composition = opts["sediment_composition"]
-      @dissolved_oxygen = opts["dissolved_oxygen"].to_i
-      @turbidity = opts["turbidity"].to_i
-      @suspended_solids = opts["suspended_solids"].to_i
+      @additional_observations = opts["additional_observations"]
     end
 
     # ==================================================
@@ -49,17 +55,23 @@ class Entry
       return results.map do |result|
         {
           "id" => result["id"].to_i,
+          "title" => result["title"],
+          "location" => result["location"],
+          "air_temperature" => result["air_temperature"],
           "meters_downstream" => result["meters_downstream"].to_i,
           "stream_width" => result["stream_width"].to_i,
           "stream_depth" => result["stream_depth"].to_i,
+          "water_temperature" => result["water_temperature"].to_dec,
+          "water_turbidity" => result["water_turbidity"].to_i,
+          "water_suspended_solids" => result["water_suspended_solids"].to_i,
+          "water_ph" => result["water_ph"].to_dec,
           "sediment_size" => result["sediment_size"].to_i,
+          "sediment_composition" => result["sediment_composition"],
           "foliage_cover" => result["foliage_cover"].to_i,
+          "flora" => result["flora"],
           "invertebrates" => result["invertebrates"],
           "vertebrates" => result["vertebrates"],
-          "sediment_composition" => result["sediment_composition"],
-          "dissolved_oxygen" => result["dissolved_oxygen"].to_i,
-          "turbidity" => result["turbidity"].to_i,
-          "suspended_solids" => result["suspended_solids"].to_i
+          "additional_observations" => result["additional_observations"]
         }
       end
     end
