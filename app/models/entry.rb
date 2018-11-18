@@ -18,14 +18,14 @@ class Entry
       @id = id_to_i
       @title = opts["title"]
       @location = opts["location"]
-      @air_temperature = opts["air_temperature"].to_dec
+      @air_temperature = opts["air_temperature"].to_f
       @meters_downstream = opts["meters_downstream"].to_i
       @stream_width = opts["stream_width"].to_i
       @stream_depth = opts["stream_depth"].to_i
       @water_temperature = opts["water_temperature"].to_dec
       @water_turbidity = opts["water_turbidity"].to_i
       @water_suspended_solids = opts["water_suspended_solids"].to_i
-      @water_ph = opts["water_ph"].to_dec
+      @water_ph = opts["water_ph"].to_f
       @sediment_size = opts["sediment_size"].to_i
       @sediment_composition = opts["sediment_composition"]
       @foliage_cover = opts["foliage_cover"].to_i
@@ -57,7 +57,7 @@ class Entry
           "id" => result["id"].to_i,
           "title" => result["title"],
           "location" => result["location"],
-          "air_temperature" => result["air_temperature"],
+          "air_temperature" => result["air_temperature"],to_f,
           "meters_downstream" => result["meters_downstream"].to_i,
           "stream_width" => result["stream_width"].to_i,
           "stream_depth" => result["stream_depth"].to_i,
@@ -87,17 +87,23 @@ class Entry
       )
       return {
         "id" => results.first["id"].to_i,
+        "title" => results.first["title"],
+        "location" => results.first["location"],
+        "air_temperature" => results.first["air_temperature"].to_f,
         "meters_downstream" => results.first["meters_downstream"].to_i,
         "stream_width" => results.first["stream_width"].to_i,
         "stream_depth" => results.first["stream_depth"].to_i,
+        "water_temperature" => results.first["water_temperature"].to_f,
+        "water_turbidity" => results.first["water_turbidity"].to_i,
+        "water_suspended_solids" => results.first["water_suspended_solids"].to_i,
+        "water_ph" => results.first["water_ph"].to_f,
         "sediment_size" => results.first["sediment_size"].to_i,
+        "sediment_composition" => results.first["sediment_composition"],
         "foliage_cover" => results.first["foliage_cover"].to_i,
+        "flora" => results.first["flora"],
         "invertebrates" => results.first["invertebrates"],
         "vertebrates" => results.first["vertebrates"],
-        "sediment_composition" => results.first["sediment_composition"],
-        "dissolved_oxygen" => results.first["dissolved_oxygen"].to_i,
-        "turbidity" => results.first["turbidity"].to_i,
-        "suspended_solids" => results.first["suspended_solids"].to_i
+        "additional_observations" => results.first["additional_observations"]
       }
     end
 
