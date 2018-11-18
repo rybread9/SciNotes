@@ -6,11 +6,24 @@ class Entries extends React.Component {
   render(){
     return(
       <div className="container">
-
         <h1>Data Entries</h1>
-
+        <button className='button is-success'>Add an Entry</button>
+        <table>
+          <tbody>
+            <tr>
+              <td className='entry'>
+                <h3>Test Entry</h3>
+              </td>
+              <td>
+                  <button className='button is-warning is-small'>Edit</button>
+              </td>
+              <td>
+                  <button className='button is-warning is-small'>Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
         <EntryForm />
-
       </div>
     )
   }

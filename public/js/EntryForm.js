@@ -15,6 +15,7 @@ class EntryForm extends React.Component {
           <div className='control'>
             <input className='input' type='number' id='air_temperature' ref='air_temperature' />
           </div>
+          <h1>Water</h1>
           <label className='label' for='meters_downstream'>Meters Downstream: </label>
           <div className='control'>
             <input className='input' type='number' id='meters_downstream' ref='meters_downstream' />
@@ -43,6 +44,7 @@ class EntryForm extends React.Component {
           <div className='control'>
             <input className='input' type='number' id='water_ph' ref='water_ph' />
           </div>
+          <h1>Sediment</h1>
           <label className='label' for='sediment_size'>Sediment Size: </label>
           <div className='control'>
             <input className='input' type='text' id='sediment_size' ref='sediment_size' />
@@ -51,13 +53,15 @@ class EntryForm extends React.Component {
           <div className='control'>
             <input className='input' type='text' id='sediment_composition' ref='sediment_composition' />
           </div>
+          <h1>Plant Life</h1>
           <label className='label' for='foliage_cover'>Foliage Cover: </label>
           <div className='control'>
             <input className='input' type='text' id='foliage_cover' ref='foliage_cover' />
           </div>
           <label className='label' for='flora'>Flora: </label>
           <div className='control'>
-            <input className='input' type='text' id='flora' ref='flora' />
+          <h1>Animal Life</h1>
+          <input className='input' type='text' id='flora' ref='flora' />
           </div>
           <label className='label' for='invertebrates'>Invertebrates: </label>
           <div className='control'>
@@ -67,6 +71,7 @@ class EntryForm extends React.Component {
           <div className='control'>
             <input className='input' type='text' id='vertebrates' ref='vertebrates' />
           </div>
+          <h1>Additional Observations</h1>
           <label className='label' for='additional_observations'>Additional Observations: </label>
           <div className='control'>
             <input className='input' type='text' id='additional_observations' ref='additional_observations' />
