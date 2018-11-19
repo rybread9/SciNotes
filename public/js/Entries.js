@@ -101,14 +101,14 @@ class Entries extends React.Component {
   toggleState (st1, st2) {
     this.setState({
       [st1]: !this.state[st1],
-      [st2]: !this.state[st2]
+      [st2]: !this.state[st2],
     })
   }
 
   render(){
     return(
-      <div className='column'>
-        <h2>Entries</h2>
+      <div className='column is-mobile'>
+        
         {
           this.state.entriesListIsVisible
           ? <button

@@ -2,7 +2,9 @@ class App extends React.Component {
   render () {
     return (
       <div className='section'>
-        <h1 className='title'>SciNotes</h1>
+        <header>
+          <h1 className='title'>SciNotes</h1>
+        </header>
         <div className='column'>
           <Entries />
         </div>
