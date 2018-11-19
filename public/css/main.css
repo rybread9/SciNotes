@@ -5,11 +5,10 @@ body {
 header {
   background-color: dodgerblue;
   border-top: 2px solid ghostwhite;
-  border-bottom: 2px solid dodgerblue;
-  /* background-color: rgb(100, 204, 109); */
+
   /* border-radius: 4rem; */
   padding-left: 1%;
-  padding-top: 0.5%;
+  padding-top: 1.5%;
   height: 4%;
   width: 100%;
 }
@@ -49,7 +48,10 @@ p {
   height: 15px;
   width: 20px;
 }
-
+.btn-delete {
+  margin-left: 72%;
+  margin-top: -45px;
+}
 
 
 

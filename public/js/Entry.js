@@ -14,11 +14,10 @@ class Entry extends React.Component {
   render () {
     return (
       <div>
-
         <div className='tile is-ancestor'>
-          <button className='button is-warning' onClick={()=> this.props.toggleState('entriesListIsVisible', 'entryIsVisible')}>Return to Entries</button>
+          <button className='button is-outlined is-success is-medium' onClick={()=> this.props.toggleState('entriesListIsVisible', 'entryIsVisible')}>Return to Entries</button>
         </div>
-
+        <br />
         <div className='tile is-ancestor'>
           <div className='tile is-2'>
             <div className='tile'>
@@ -40,12 +39,11 @@ class Entry extends React.Component {
                 <p className='tile is-child box'><span>Invertebrates:</span>{this.props.entry.invertebrates}</p>
                 <p className='tile is-child box'><span>Vertebrates:</span>{this.props.entry.vertebrates}</p>
                 <p className='tile is-child box'><span>Additional Observations:</span>{this.props.entry.additional_observations}</p>
-              </div>
+              </div><br />
               <div className='tile'>
-                <button onClick={ ()=> this.toggleFormState( 'editEntryIsVisible')} className='button is-warning is-medium'>Edit</button>
+                <button className='button is-info is-outlined is-medium' onClick={ ()=> this.toggleFormState( 'editEntryIsVisible')}>Edit</button>
               </div>
-              <div className='tile'>
-                <button className='button is-danger is-medium' onClick={()=> {this.props.toggleState('entryIsVisible', 'entriesListIsVisible');this.props.deleteEntry(this.props.entry, this.props.index)}}>Delete</button>
+                <button className='button is-danger is-outlined is-medium btn-delete' onClick={()=> {this.props.toggleState('entryIsVisible', 'entriesListIsVisible');this.props.deleteEntry(this.props.entry, this.props.index)}}>Delete</button>
               </div>
 
             </div>
@@ -54,7 +52,7 @@ class Entry extends React.Component {
            ? <EntryForm toggleState={this.toggleState} entry={this.props.entry} handleSubmit={this.props.handleSubmit}/>
             : ''}
         </div>
-      </div>
+      // </div>
     )
   }
 }
