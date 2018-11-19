@@ -13,12 +13,12 @@ class Entry
     # add attribute readers for instance access
     attr_reader :id, :title, :location, :air_temperature, :meters_downstream, :stream_width, :stream_depth, :water_temperature, :water_turbidity, :water_suspended_solids, :water_ph, :sediment_size, :sediment_composition, :foliage_cover, :flora, :invertebrates, :vertebrates, :additional_observations
 
-    #connect to postgres
-    DB = PG.connect({
-      :host => "localhost",
-      :port => 5432,
-      :dbname => 'scinotes_development'
-    })
+    # #connect to postgres
+    # DB = PG.connect({
+    #   :host => "localhost",
+    #   :port => 5432,
+    #   :dbname => 'scinotes_development'
+    # })
 
     # initialize options hash
     def initialize(opts = {}, id=nil)
