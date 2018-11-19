@@ -1,7 +1,24 @@
 class Entry extends React.Component {
+  constructor(props){
+    super(props)
+    this.toggleState = this.toggleState.bind(this)
+    this.state = {
+      editEntryIsVisible: false
+    }
+  }
+  toggleFormState(st){
+    this.setState({
+      [st]: !this.state[st]
+    })
+  }
   render () {
     return (
       <div>
+
+        <div className='tile is-ancestor'>
+          <button className='button is-warning' onClick={()=> this.props.toggleState('entriesListIsVisible', 'entryIsVisible')}>Return to Entries</button>
+        </div>
+
         <div className='tile is-ancestor'>
           <div className='tile is-2'>
             <div className='tile'>
@@ -25,13 +42,17 @@ class Entry extends React.Component {
                 <p className='tile is-child box'><span>Additional Observations:</span>{this.props.entry.additional_observations}</p>
               </div>
               <div className='tile'>
+                <button onClick={ ()=> this.toggleFormState( 'editEntryIsVisible')} className='button is-warning is-medium'>Edit</button>
               </div>
-            <div className='tile'>
-              <button className='button is-warning' onClick={()=> this.props.toggleState('entriesListIsVisible', 'entryIsVisible')}>Return to Entries</button>
-            </div>
+              <div className='tile'>
+                <button className='button is-danger is-medium' onClick={()=> {this.props.toggleState('entryIsVisible', 'entriesListIsVisible');this.props.deleteEntry(this.props.entry, this.props.index)}}>Delete</button>
+              </div>
+
             </div>
           </div>
-          <EntryForm entry={this.props.entry} handleSubmit={this.props.handleSubmit}/>
+          {this.state.editEntryIsVisible
+           ? <EntryForm toggleState={this.toggleState} entry={this.props.entry} handleSubmit={this.props.handleSubmit}/>
+            : ''}
         </div>
       </div>
     )

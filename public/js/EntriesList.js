@@ -5,18 +5,20 @@ class EntriesList extends React.Component {
 
         <div className="column is-multilined is-centered">
 
-          <table>
-                  <tr>
-                    <th>
-                      <h2>id #</h2>
-                    </th>
-                    <th>
-                        <h2>Meters Downstream</h2>
-                    </th>
-                    <th>
-                      <h2> </h2>
-                    </th>
-                  </tr>
+          <table className="table is-bordered is-striped is-hoverable is-fullwidth">
+            <thead>
+              <tr>
+                <th>
+                  <h2>id #</h2>
+                </th>
+                <th>
+                    <h2>Meters Downstream</h2>
+                </th>
+                <th>
+                  <h2> </h2>
+                </th>
+              </tr>
+            </thead>
             <tbody>
 
               {this.props.entries.map((entry, index) => {
@@ -28,12 +30,10 @@ class EntriesList extends React.Component {
                     <td onClick={()=> {this.props.getEntry(entry); this.props.toggleState('entriesListIsVisible', 'entryIsVisible')}}>
                       <h3>{entry.meters_downstream}</h3>
                     </td>
-                    <td>
-                        <button className='button is-warning is-small'>Edit</button>
+                    <td onClick={()=> {this.props.getEntry(entry); this.props.toggleState('entriesListIsVisible', 'entryIsVisible')}}>
+                      <img className="arrow" src="/images/right1.png" alt="Click for details" />
                     </td>
-                    <td>
-                        <button className='button is-warning is-small' onClick={()=> this.props.deleteEntry(entry, index)}>Delete</button>
-                    </td>
+
                   </tr>
                 )
               })}
@@ -44,3 +44,9 @@ class EntriesList extends React.Component {
       )
     }
 }
+// <td>
+//     <button className='button is-warning is-small'>Edit</button>
+// </td>
+// <td>
+//     <button className='button is-warning is-small' onClick={()=> this.props.deleteEntry(entry, index)}>Delete</button>
+// </td>

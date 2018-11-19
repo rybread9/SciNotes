@@ -5,7 +5,6 @@ class Entries extends React.Component {
       entriesListIsVisible: true,
       addEntryIsVisible: false,
       entryIsVisible: false,
-      editEntryIsVisible: false,
       entries: [],
       entry: {}
     }
@@ -101,7 +100,7 @@ class Entries extends React.Component {
   toggleState (st1, st2) {
     this.setState({
       [st1]: !this.state[st1],
-      [st2]: !this.state[st2],
+      [st2]: !this.state[st2]
     })
   }
 
@@ -139,6 +138,8 @@ class Entries extends React.Component {
         {
           this.state.entryIsVisible
           ? <Entry
+              
+              deleteEntry={this.deleteEntry}
               toggleState={this.toggleState}
               entry={this.state.entry}
               handleSubmit={this.handleUpdateSubmit}
