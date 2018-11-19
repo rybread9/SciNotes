@@ -1,4 +1,32 @@
-
+body {
+  background: ghostwhite;
+}
+header {
+  background-color: ghostwhite;
+  border: 2px solid dodgerblue;
+  /* background-color: rgb(100, 204, 109); */
+  border-radius: 4rem;
+  padding-left: 1%;
+  padding-top: 0.5%;
+  height: 4%;
+  width: 100%;
+}
+/* .is-success {
+  background-color: ghostwhite;
+  border: 1px solid rgb(100, 205, 109);
+  color: rgb(100, 205, 109);
+} */
+.logo {
+  height: 40px;
+  width: 40px;
+}
+p {
+  color: dodgerblue;
+  font-size: 1.2rem;
+}
+.title {
+  color: dodgerblue;
+}
   /* .container {
     width: 90%;
   } */
