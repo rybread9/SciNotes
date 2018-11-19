@@ -13,8 +13,8 @@ class Entry extends React.Component {
     })
   }
   confirmDelete(){
-    return confirm("Yes, I want to delete this entry.")
-    
+    const confirm = window.confirm("Yes, I want to delete this entry.")
+
     if (confirm == true) {
       this.props.deleteEntry(this.props.entry, this.props.index)
       this.props.toggleState('entryIsVisible', 'entriesListIsVisible');
@@ -32,11 +32,10 @@ class Entry extends React.Component {
   render () {
     return (
       <div>
-
         <div className='tile is-ancestor'>
-          <button className='button is-warning' onClick={()=> this.props.toggleState('entriesListIsVisible', 'entryIsVisible')}>Return to Entries</button>
+          <button className='button is-outlined is-success is-medium' onClick={()=> this.props.toggleState('entriesListIsVisible', 'entryIsVisible')}>Return to Entries</button>
         </div>
-
+        <br />
         <div className='tile is-ancestor'>
           <div className='tile is-2'>
             <div className='tile'>
@@ -58,12 +57,12 @@ class Entry extends React.Component {
                 <p className='tile is-child box'><span>Invertebrates:</span>{this.props.entry.invertebrates}</p>
                 <p className='tile is-child box'><span>Vertebrates:</span>{this.props.entry.vertebrates}</p>
                 <p className='tile is-child box'><span>Additional Observations:</span>{this.props.entry.additional_observations}</p>
+              </div><br />
+              <div className='tile'>
+                <button className='button is-info is-outlined is-medium' onClick={ ()=> this.toggleFormState( 'editEntryIsVisible')}>Edit</button>
               </div>
               <div className='tile'>
-                <button onClick={ ()=> this.toggleFormState( 'editEntryIsVisible')} className='button is-warning is-medium'>Edit</button>
-              </div>
-              <div className='tile'>
-                <button className='button is-danger is-medium' onClick={()=> this.confirmDelete()}>Delete</button>
+                <button className='button is-danger is-medium' onClick={(this.props.entry, this.props.index)=> window.confirm("Are you sure you wish to delete this item?") && this.toggleState('entryIsVisible', 'entriesListIsVisible');this.deleteEntry(this.props.entry, this.props.index)}>Delete</button>
               </div>
 
             </div>
@@ -72,7 +71,7 @@ class Entry extends React.Component {
            ? <EntryForm toggleState={this.toggleState} entry={this.props.entry} handleSubmit={this.props.handleSubmit}/>
             : ''}
         </div>
-      </div>
+      // </div>
     )
   }
 }
