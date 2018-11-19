@@ -10,7 +10,7 @@ class EntryForm extends React.Component {
       stream_depth: 0,
       water_temperature: 0,
       water_turbidity: 0,
-      suspended_solids: 0,
+      water_suspended_solids: 0,
       water_ph: 0,
       sediment_size: 0,
       sediment_composition: '',
