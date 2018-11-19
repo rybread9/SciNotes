@@ -9,10 +9,10 @@ class EntriesList extends React.Component {
             <thead>
               <tr>
                 <th>
-                  <h2>id #</h2>
+                  <h2><strong>id #</strong></h2>
                 </th>
                 <th>
-                    <h2>Meters Downstream</h2>
+                    <h2><strong>Meters Downstream</strong></h2>
                 </th>
                 <th>
                   <h2> </h2>

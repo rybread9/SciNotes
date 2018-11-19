@@ -111,8 +111,8 @@ class Entries extends React.Component {
         {
           this.state.entriesListIsVisible
           ? <button
-              className='button is-success is-outlined is-medium' onClick={()=>this.toggleState('addEntryIsVisible', 'entriesListIsVisible')}>
-                Add an Entry
+              className='add button is-success is-medium' onClick={()=>this.toggleState('addEntryIsVisible', 'entriesListIsVisible')}>
+                <h3 className="plus">+</h3>
             </button>
           : ''
         }
@@ -138,7 +138,7 @@ class Entries extends React.Component {
         {
           this.state.entryIsVisible
           ? <Entry
-              
+
               deleteEntry={this.deleteEntry}
               toggleState={this.toggleState}
               entry={this.state.entry}
