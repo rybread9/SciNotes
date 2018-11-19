@@ -66,7 +66,7 @@ class EntryForm extends React.Component {
   }
   render(){
     return(
-      <div className="columns is-mobile">
+      <div className=" form columns is-mobile is-centered">
         <div className="field">
           <form onSubmit={this.handleSubmit}>
             <label className='label' for='title'>Title: </label>
