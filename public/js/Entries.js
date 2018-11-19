@@ -107,6 +107,7 @@ class Entries extends React.Component {
   render(){
     return(
       <div className='column is-mobile'>
+      
 
         {
           this.state.entriesListIsVisible

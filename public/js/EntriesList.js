@@ -3,9 +3,20 @@ class EntriesList extends React.Component {
 
     return(
 
-        <div className="column is-multilined is-centered">
+        <div className="column is-centered">
 
-          <table className="table is-bordered is-striped is-hoverable is-fullwidth">
+          <div>
+            <h3>Study Overview</h3>
+
+            <div>
+              <h3>Title: </h3>
+              <h3>Study Descritption: </h3>
+              <h3>Location: </h3>
+
+            </div>
+          </div>
+
+          <table className="table is-multilined is-bordered is-striped is-hoverable is-fullwidth">
             <thead>
               <tr>
                 <th>

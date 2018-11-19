@@ -2,6 +2,7 @@ class Entry extends React.Component {
   constructor(props){
     super(props)
     this.toggleFormState = this.toggleFormState.bind(this)
+    this.confirmDelete = this.confirmDelete.bind(this)
     this.state = {
       editEntryIsVisible: false
     }
@@ -10,6 +11,23 @@ class Entry extends React.Component {
     this.setState({
       [st]: !this.state[st]
     })
+  }
+  confirmDelete(){
+    return confirm("Yes, I want to delete this entry.")
+    
+    if (confirm == true) {
+      this.props.deleteEntry(this.props.entry, this.props.index)
+      this.props.toggleState('entryIsVisible', 'entriesListIsVisible');
+    } else {
+
+    }
+    // let confirm = prompt("Are you sure you wish to delete this entry?", "yes/no")
+    // if (confirm = "yes") {
+    //   this.props.deleteEntry(this.props.entry, this.props.index)
+    //   this.props.toggleState('entryIsVisible', 'entriesListIsVisible');
+    // } else {
+    //
+    // }
   }
   render () {
     return (
@@ -45,7 +63,7 @@ class Entry extends React.Component {
                 <button onClick={ ()=> this.toggleFormState( 'editEntryIsVisible')} className='button is-warning is-medium'>Edit</button>
               </div>
               <div className='tile'>
-                <button className='button is-danger is-medium' onClick={()=> {this.props.toggleState('entryIsVisible', 'entriesListIsVisible');this.props.deleteEntry(this.props.entry, this.props.index)}}>Delete</button>
+                <button className='button is-danger is-medium' onClick={()=> this.confirmDelete()}>Delete</button>
               </div>
 
             </div>
