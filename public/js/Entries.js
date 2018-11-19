@@ -108,11 +108,11 @@ class Entries extends React.Component {
   render(){
     return(
       <div className='column is-mobile'>
-        
+
         {
           this.state.entriesListIsVisible
           ? <button
-              className='button is-success' onClick={()=>this.toggleState('addEntryIsVisible', 'entriesListIsVisible')}>
+              className='button is-success is-outlined is-medium' onClick={()=>this.toggleState('addEntryIsVisible', 'entriesListIsVisible')}>
                 Add an Entry
             </button>
           : ''
