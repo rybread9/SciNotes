@@ -4,7 +4,7 @@ class EntriesList extends React.Component {
     return(
 
         <div className="column is-multilined is-centered">
-  
+
           <table>
                   <tr>
                     <th>
