@@ -3,6 +3,13 @@ class Entry
     #                      SET UP
     # ==================================================
 
+    if(ENV['DATABASE_URL'])
+        uri = URI.parse(ENV['DATABASE_URL'])
+        DB = PG.connect(uri.hostname, uri.port, nil, nil, uri.path[1..-1], uri.user, uri.password)
+    else
+        DB = PG.connect(host: "localhost", port: 5432, dbname: 'scinotes_development')
+    end
+
     # add attribute readers for instance access
     attr_reader :id, :title, :location, :air_temperature, :meters_downstream, :stream_width, :stream_depth, :water_temperature, :water_turbidity, :water_suspended_solids, :water_ph, :sediment_size, :sediment_composition, :foliage_cover, :flora, :invertebrates, :vertebrates, :additional_observations
 
