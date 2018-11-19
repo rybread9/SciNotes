@@ -1,7 +1,7 @@
 class Entry extends React.Component {
   constructor(props){
     super(props)
-    this.toggleState = this.toggleState.bind(this)
+    this.toggleFormState = this.toggleFormState.bind(this)
     this.state = {
       editEntryIsVisible: false
     }

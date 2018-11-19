@@ -45,6 +45,7 @@ p {
     and (orientation: portrait) {
       .content {
         display: block;
+        width: 100%;
       }
 
 
