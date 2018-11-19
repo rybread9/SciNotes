@@ -15,6 +15,7 @@ class Entries extends React.Component {
       this.handleCreate = this.handleCreate.bind(this)
       this.handleCreateSubmit = this.handleCreateSubmit.bind(this)
       this.handleUpdateSubmit = this.handleUpdateSubmit.bind(this)
+      this.getEntries = this.getEntries.bind(this)
     }
 
   componentDidMount() {
@@ -22,7 +23,7 @@ class Entries extends React.Component {
   }
 
   deleteEntry(entry, index) {
-    fetch('entries/' + entry.id,
+    fetch('/entries/' + entry.id,
       {
           method: 'DELETE'
       })
@@ -37,9 +38,9 @@ class Entries extends React.Component {
   }
 
   handleCreate (entry) {
-    const updatedEntries = this.state.entries
-    updatedEntries.unshift(entry)
-    this.setState({entries: updatedEntries})
+    // const updatedEntries = this.state.entries
+    // updatedEntries.unshift(entry)
+    this.setState({entries: [entry, ...this.state.entries]})
   }
 
   handleCreateSubmit (entry) {
@@ -55,10 +56,13 @@ class Entries extends React.Component {
         return createdEntry.json()
       })
       .then(jsonedEntry => {
+        // console.log(jsonedEntry);
         this.handleCreate(jsonedEntry)
         this.toggleState('addEntryIsVisible', 'entriesListIsVisible')
       })
-      .catch(error => console.log(error))
+      .catch(error => {
+        console.log(error)
+      })
   }
 
   handleUpdateSubmit (entry) {
