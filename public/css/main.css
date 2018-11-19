@@ -3,9 +3,10 @@ body {
 }
 header {
   background-color: ghostwhite;
-  border: 2px solid dodgerblue;
+  border-top: 2px solid dodgerblue;
+  border-bottom: 2px solid dodgerblue;
   /* background-color: rgb(100, 204, 109); */
-  border-radius: 4rem;
+  /* border-radius: 4rem; */
   padding-left: 1%;
   padding-top: 0.5%;
   height: 4%;
@@ -23,6 +24,7 @@ header {
 p {
   color: dodgerblue;
   font-size: 1.2rem;
+  padding-left: 2.8rem;
 }
 .title {
   color: dodgerblue;
@@ -47,6 +49,5 @@ p {
         display: block;
         width: 100%;
       }
-
 
   }
