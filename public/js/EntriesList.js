@@ -1,3 +1,5 @@
+// {this.state.overviewIsVisible}
+
 class EntriesList extends React.Component {
   render(){
     return(

@@ -65,7 +65,7 @@ class Entry extends React.Component {
                 <button className='button is-info is-outlined is-medium' onClick={ ()=> this.toggleFormState( 'editEntryIsVisible')}>Edit</button>
               </div>
               <div className='tile'>
-                <button className='button is-danger is-medium' onClick={this.confirmDelete}>Delete</button>
+                <button className='button is-danger is-outlined is-medium' onClick={this.confirmDelete}>Delete</button>
               </div>
 
             </div>
