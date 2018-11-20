@@ -110,7 +110,14 @@ class Entries extends React.Component {
       <div className='column is-mobile'>
 
 
-        
+        {
+          this.state.entriesListIsVisible
+          ? <button
+              className='add button is-success is-medium' onClick={()=>this.toggleState('addEntryIsVisible', 'entriesListIsVisible')}>
+                <h3 className="plus">+</h3>
+            </button>
+          : ''
+        }
         {
           this.state.entriesListIsVisible && this.state.entries.length > 0
           ? <EntriesList

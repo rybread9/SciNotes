@@ -1,22 +1,21 @@
+/* @font-face { font-family: 'Exan-Regular'; src: utrl('Exan-Regular.ttf'); }
+@font-face { font-family: 'Exan-Regular'; font-weight: bold; src: url('Exan-Regular.ttf');} */
+@import url('https://fonts.googleapis.com/css?family=Exo');
 
 body {
   background: ghostwhite;
+  font-family: 'Exo', Fallback, sans-serif;
+  font-weight: bold;
 }
 header {
   background-color: dodgerblue;
-  border-top: 2px solid ghostwhite;
-
-  /* border-radius: 4rem; */
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  color: white;
   padding-left: 1%;
   padding-top: 1.5%;
   height: 4%;
   width: 100%;
 }
-/* .is-success {
-  background-color: ghostwhite;
-  border: 1px solid rgb(100, 205, 109);
-  color: rgb(100, 205, 109);
-} */
 .overview {
   border: 1px dashed dodgerblue;
   padding: 5px;

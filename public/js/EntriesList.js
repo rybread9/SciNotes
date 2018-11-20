@@ -13,11 +13,7 @@ class EntriesList extends React.Component {
             </div>
           </div>
 
-          <button
-                className='add button is-success is-medium' onClick={()=>this.props.toggleState('addEntryIsVisible', 'entriesListIsVisible')}>
-                  <h3 className="plus">+</h3>
-          </button>
-
+          
 
           <table className="table is-multilined is-bordered is-striped is-hoverable is-fullwidth">
             <thead>
