@@ -38,7 +38,6 @@ header {
   font-weight: bold;
 }
 .add {
-
   margin-left: -5%;
   border-radius: 50%;
   font-weight: bold;
@@ -74,12 +73,29 @@ p {
 
 .btn-delete {
   margin-left: 72%;
-  margin-top: -45px;
+  margin-top: -70px;
 }
 .input {
   margin-bottom: 4%;
 }
-
+/* .i {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+} */
+.icon-dropdown {
+  height: 25px;
+  margin-top: 0.5%;
+  width: 25px;
+}
+.header-water {
+  background-color: dodgerblue;
+}
 
   @media only screen
     and (min-device-width: 375px)
