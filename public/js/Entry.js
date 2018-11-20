@@ -56,7 +56,7 @@ class Entry extends React.Component {
                 <p className='tile is-child box'><span>Title: </span>{this.props.entry.title}</p>
                 <p className='tile is-child box'><span>Location: </span>{this.props.entry.location}</p>
                 <p className='tile is-child box'><span>Air Temperature: </span>{this.props.entry.air_temperature} degrees F</p>
-              <br />  
+              <br />
 
             <h1 className='tile is-child box'><strong>WATER</strong></h1>
                 <p className='tile is-child box'><span>Meters Downstream:       </span>{this.props.entry.meters_downstream}</p>
