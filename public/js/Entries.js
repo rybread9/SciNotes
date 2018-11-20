@@ -27,12 +27,13 @@ class Entries extends React.Component {
           method: 'DELETE'
       })
       .then(data => {
-        this.setState({
-          entries: [
-            ...this.state.entries.slice(0, index),
-            ...this.state.entries.slice(index + 1)
-          ]
-        })
+        // this.setState({
+        //   entries: [
+        //     ...this.state.entries.slice(0, index),
+        //     ...this.state.entries.slice(index + 1)
+        //   ]
+        // })
+        this.getEntries()
       })
   }
 
@@ -103,10 +104,11 @@ class Entries extends React.Component {
       [st2]: !this.state[st2]
     })
   }
-
   render(){
+
     return(
       <div className='column is-mobile'>
+
 
         {
           this.state.entriesListIsVisible
@@ -117,7 +119,7 @@ class Entries extends React.Component {
           : ''
         }
         {
-          this.state.entriesListIsVisible
+          this.state.entriesListIsVisible && this.state.entries.length > 0
           ? <EntriesList
               toggleState={this.toggleState}
               entries={this.state.entries}
