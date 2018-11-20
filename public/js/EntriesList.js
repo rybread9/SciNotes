@@ -1,6 +1,16 @@
-// {this.state.overviewIsVisible}
-
 class EntriesList extends React.Component {
+  constructor(props){
+    super(props)
+    this.toggleOverviewState = this.toggleOverviewState.bind(this)
+    this.state = {
+      overviewIsVisible: false
+    }
+  }
+  toggleOverviewState (st) {
+    this.setState({
+      [st]: !this.state[st]
+    })
+  }
   render(){
     return(
 
@@ -8,20 +18,20 @@ class EntriesList extends React.Component {
 
           <div className="overview is-info">
 
-            <div onClick={()=>this.toggleState('overviewIsVisible')} class="overviewheader">
-              <h3 className="subtitle is-4"><span>Study Overview</span></h3>
+            <div onClick={()=>this.toggleOverviewState('overviewIsVisible')} class="overviewheader">
+              <h3 className="subtitle is-4"><span>Study Overview</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<img class="icon-dropdown" src="images/expand-button.png"></img></h3>
             </div>
-
+            {
+              this.state.overviewIsVisible
+              ?
             <div>
               <h3 className="subtitle is-6"><span class="overviewcontent">Title: {this.props.entries[0].title}</span></h3>
               <h3 className="subtitle is-6"><span class="overviewcontent">Study Descritption: A study on the     &nbsp;&nbsp;&nbsp;Redmond Forge Stream.</span></h3>
               <h3 className="subtitle is-6"><span class="overviewcontent">Location: {this.props.entries[0].location}</span></h3>
             </div>
-
-
+            : ''
+            }
           </div>
-
-
 
           <table className="table is-multilined is-bordered is-striped is-hoverable is-fullwidth">
             <thead>
