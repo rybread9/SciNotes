@@ -64,6 +64,20 @@ class EntryForm extends React.Component {
       [st]: !this.state[st]
     })
   }
+  // getWater () {
+  //   return (
+      // <div waterIsVisible={this.state.waterIsVisible}>
+      //   <label className='label' for='meters_downstream'>Meters Downstream: </label>
+      //   <div className='control'><input className='input is-medium is-info is-hovered is-rounded'
+      //       type='number'
+      //       id='meters_downstream'
+      //       ref='meters_downstream'
+      //       onChange={this.handleChange}
+      //       value={this.state.meters_downstream}
+      //       />
+      //   </div>
+  //   )
+  // }
   render(){
     return(
       <div className=" form columns is-mobile is-centered">
@@ -72,7 +86,7 @@ class EntryForm extends React.Component {
             <label className='label' for='title'>Title: </label>
             <div className='control'>
               <input
-                className='input is-small is-primary is-hovered is-rounded'
+                className='input is-medium is-primary is-hovered is-rounded'
                 type='text'
                 id='title'
                 ref='title'
@@ -83,7 +97,7 @@ class EntryForm extends React.Component {
             <label className='label' for='location'>Location: </label>
             <div className='control'>
               <input
-                className='input is-small is-primary is-hovered is-rounded'
+                className='input is-medium is-primary is-hovered is-rounded'
                 type='text'
                 id='location'
                 ref='location'
@@ -94,7 +108,7 @@ class EntryForm extends React.Component {
             <label className='label' for='air_temperature'>Air Temperature: </label>
             <div className='control'>
               <input
-                className='input is-small is-primary is-hovered is-rounded'
+                className='input is-medium is-primary is-hovered is-rounded'
                 type='number'
                 id='air_temperature'
                 ref='air_temperature'
@@ -102,23 +116,25 @@ class EntryForm extends React.Component {
                 value={this.state.air_temperature}
                 />
             </div>
-            <h1 waterIsVisible={this.state.waterIsVisible} onClick={()=> this.toggleState('waterIsVisible')}>Water</h1>
-            <div waterIsVisible={this.state.waterIsVisible}>
-              <label className='label' for='meters_downstream'>Meters Downstream: </label>
-              <div className='control'>
-                <input
-                  className='input is-small is-info is-hovered is-rounded'
-                  type='number'
-                  id='meters_downstream'
-                  ref='meters_downstream'
-                  onChange={this.handleChange}
-                  value={this.state.meters_downstream}
-                  />
-              </div>
+
+            <h1 onClick={()=> this.toggleState('waterIsVisible')}>Water</h1>
+            { this.state.waterIsVisible
+            ? <div waterIsVisible={this.state.waterIsVisible}>
+                    <label className='label' for='meters_downstream'>Meters Downstream: </label>
+                    <div className='control'><input className='input is-medium is-info is-hovered is-rounded'
+                        type='number'
+                        id='meters_downstream'
+                        ref='meters_downstream'
+                        onChange={this.handleChange}
+                        value={this.state.meters_downstream}
+                        />
+                    </div>
+
+
               <label className='label' for='stream_width'>Stream Width: </label>
               <div className='control'>
                 <input
-                  className='input is-small is-info is-hovered is-rounded'
+                  className='input is-medium is-info is-hovered is-rounded'
                   type='number'
                   id='stream_width'
                   ref='stream_width'
@@ -129,7 +145,7 @@ class EntryForm extends React.Component {
               <label className='label' for='stream_depth'>Stream Depth: </label>
               <div className='control'>
                 <input
-                  className='input is-small is-info is-hovered is-rounded'
+                  className='input is-medium is-info is-hovered is-rounded'
                   type='number'
                   id='stream_depth'
                   ref='stream_depth'
@@ -140,7 +156,7 @@ class EntryForm extends React.Component {
               <label className='label' for='water_temperature'>Water Temperature: </label>
               <div className='control'>
                 <input
-                  className='input is-small is-info is-hovered is-rounded'
+                  className='input is-medium is-info is-hovered is-rounded'
                   type='number'
                   id='water_temperature'
                   ref='water_temperature'
@@ -151,7 +167,7 @@ class EntryForm extends React.Component {
               <label className='label' for='water_turbidity'>Water Turbidity: </label>
               <div className='control'>
                 <input
-                  className='input is-small is-info is-hovered is-rounded'
+                  className='input is-medium is-info is-hovered is-rounded'
                   type='number'
                   id='water_turbidity'
                   ref='water_turbidity'
@@ -162,7 +178,7 @@ class EntryForm extends React.Component {
               <label className='label' for='water_suspended_solids'>Suspended Solids: </label>
               <div className='control'>
                 <input
-                  className='input is-small is-info is-hovered is-rounded'
+                  className='input is-medium is-info is-hovered is-rounded'
                   type='number'
                   id='water_suspended_solids'
                   ref='water_suspended_solids'
@@ -173,7 +189,7 @@ class EntryForm extends React.Component {
               <label className='label' for='water_ph'>Water pH: </label>
               <div className='control'>
                 <input
-                  className='input is-small is-info is-hovered is-rounded'
+                  className='input is-medium is-info is-hovered is-rounded'
                   type='number'
                   id='water_ph'
                   ref='water_ph'
@@ -182,12 +198,15 @@ class EntryForm extends React.Component {
                   />
               </div>
             </div>
+            : ''}
 
-            <h1>Sediment</h1>
+            <h1 onClick={()=> this.toggleState('sedimentIsVisible')}>Sediment</h1>
+            { this.state.sedimentIsVisible
+            ? <div sedimentIsVisible={this.state.sedimentIsVisible}>
             <label className='label' for='sediment_size'>Sediment Size: </label>
             <div className='control'>
               <input
-                className='input is-small is-danger is-hovered is-rounded'
+                className='input is-medium is-danger is-hovered is-rounded'
                 type='text'
                 id='sediment_size'
                 ref='sediment_size'
@@ -198,7 +217,7 @@ class EntryForm extends React.Component {
             <label className='label' for='sediment_composition'>Sediment Composition: </label>
             <div className='control'>
               <input
-                className='input is-small is-danger is-hovered is-rounded'
+                className='input is-medium is-danger is-hovered is-rounded'
                 type='text'
                 id='sediment_composition'
                 ref='sediment_composition'
@@ -206,11 +225,16 @@ class EntryForm extends React.Component {
                 value={this.state.sediment_composition}
                 />
             </div>
-            <h1>Plant Life</h1>
+          </div>
+          : ''}
+
+          <h1 onClick={()=> this.toggleState('plantsIsVisible')}>Plant Life</h1>
+          { this.state.plantsIsVisible
+          ? <div sedimentIsVisible={this.state.plantsIsVisible}>
             <label className='label' for='foliage_cover'>Foliage Cover: </label>
             <div className='control'>
               <input
-                className='input is-small is-success is-hovered is-rounded'
+                className='input is-medium is-success is-hovered is-rounded'
                 type='text'
                 id='foliage_cover'
                 ref='foliage_cover'
@@ -221,7 +245,7 @@ class EntryForm extends React.Component {
             <label className='label' for='flora'>Flora: </label>
             <div className='control'>
             <input
-              className='input is-small is-success is-hovered is-rounded'
+              className='input is-medium is-success is-hovered is-rounded'
               type='text'
               id='flora'
               ref='flora'
@@ -229,11 +253,16 @@ class EntryForm extends React.Component {
               value={this.state.flora}
               />
             </div>
-            <h1>Animal Life</h1>
+          </div>
+          : ''}
+
+          <h1 onClick={()=> this.toggleState('animalsIsVisible')}>Animal Life</h1>
+          { this.state.animalsIsVisible
+          ? <div sedimentIsVisible={this.state.animalsIsVisible}>
             <label className='label' for='invertebrates'>Invertebrates: </label>
             <div className='control'>
               <input
-                className='input is-small is-warning is-hovered is-rounded'
+                className='input is-medium is-warning is-hovered is-rounded'
                 type='text'
                 id='invertebrates'
                 ref='invertebrates'
@@ -244,7 +273,7 @@ class EntryForm extends React.Component {
             <label className='label' for='vertebrates'>Vertebrates: </label>
             <div className='control'>
               <input
-                className='input is-small is-warning is-hovered is-rounded'
+                className='input is-medium is-warning is-hovered is-rounded'
                 type='text'
                 id='vertebrates'
                 ref='vertebrates'
@@ -252,7 +281,9 @@ class EntryForm extends React.Component {
                 value={this.state.vertebrates}
                 />
             </div>
-            <h1>Additional Observations</h1>
+          </div>
+          : ''}
+            
             <label className='label' for='additional_observations'>Additional Observations: </label>
             <div className='control'>
               <textarea
