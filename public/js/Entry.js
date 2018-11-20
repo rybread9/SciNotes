@@ -43,13 +43,7 @@ class Entry extends React.Component {
               <div className='tile'>
                 <button className='button is-info is-outlined is-medium' onClick={ ()=> this.toggleFormState( 'editEntryIsVisible')}>Edit</button>
               </div>
-
-              &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <div className='tile'>
-                <button className='button is-danger is-medium' onClick={()=> {this.props.toggleState('entryIsVisible', 'entriesListIsVisible');this.props.deleteEntry(this.props.entry, this.props.index)}}>Delete</button>
-
                 <button className='button is-danger is-outlined is-medium btn-delete' onClick={()=> {this.props.toggleState('entryIsVisible', 'entriesListIsVisible');this.props.deleteEntry(this.props.entry, this.props.index)}}>Delete</button>
-
               </div>
 
             </div>

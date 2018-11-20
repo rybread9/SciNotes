@@ -4,21 +4,13 @@
 
 body {
   background: ghostwhite;
-  font-family: 'Exan-Regular', Fallback, sans-serif;
+  font-family: 'Exo', Fallback, sans-serif;
   font-weight: bold;
 }
 header {
   background-color: dodgerblue;
-
-  border-top: 2px solid ghostwhite;
-  border-bottom: 2px solid dodgerblue;
-  font:
-  /* background-color: rgb(100, 204, 109); */
-  /* border-radius: 4rem; */
-
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   color: white;
-
   padding-left: 1%;
   padding-top: 1.5%;
   height: 4%;
