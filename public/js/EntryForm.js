@@ -200,7 +200,9 @@ class EntryForm extends React.Component {
             </div>
             : ''}
 
-            <h1>Sediment</h1>
+            <h1 onClick={()=> this.toggleState('sedimentIsVisible')}>Sediment</h1>
+            { this.state.sedimentIsVisible
+            ? <div sedimentIsVisible={this.state.sedimentIsVisible}>
             <label className='label' for='sediment_size'>Sediment Size: </label>
             <div className='control'>
               <input
@@ -223,7 +225,12 @@ class EntryForm extends React.Component {
                 value={this.state.sediment_composition}
                 />
             </div>
-            <h1>Plant Life</h1>
+          </div>
+          : ''}
+
+          <h1 onClick={()=> this.toggleState('plantsIsVisible')}>Plant Life</h1>
+          { this.state.plantsIsVisible
+          ? <div sedimentIsVisible={this.state.plantsIsVisible}>
             <label className='label' for='foliage_cover'>Foliage Cover: </label>
             <div className='control'>
               <input
@@ -246,7 +253,12 @@ class EntryForm extends React.Component {
               value={this.state.flora}
               />
             </div>
-            <h1>Animal Life</h1>
+          </div>
+          : ''}
+
+          <h1 onClick={()=> this.toggleState('animalsIsVisible')}>Animal Life</h1>
+          { this.state.animalsIsVisible
+          ? <div sedimentIsVisible={this.state.animalsIsVisible}>
             <label className='label' for='invertebrates'>Invertebrates: </label>
             <div className='control'>
               <input
@@ -269,6 +281,9 @@ class EntryForm extends React.Component {
                 value={this.state.vertebrates}
                 />
             </div>
+          </div>
+          : ''}
+            
             <h1>Additional Observations</h1>
             <label className='label' for='additional_observations'>Additional Observations: </label>
             <div className='control'>
