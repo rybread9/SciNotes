@@ -7,13 +7,13 @@ SciNotes is an app created by [Rylen del Rio](https://github.com/rybread9) and [
 Going out into the field? Give it a whirl [here](https://scinotes.herokuapp.com/)!
 
 ### Technologies Used
---Ruby on Rails
---React.js
---Heroku
---HTML/CSS
---PostgreSQL
---Bulma
---Postman
+* Ruby on Rails
+* React.js
+* Heroku
+* HTML/CSS
+* PostgreSQL
+* Bulma
+* Postman
 
 ### Problems Solved
 * Long forms solved by collapsable sections.
