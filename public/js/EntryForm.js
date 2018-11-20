@@ -82,6 +82,7 @@ class EntryForm extends React.Component {
     return(
       <div className=" form columns is-mobile is-centered">
         <div className="field">
+        <br /><br />
           <form onSubmit={this.handleSubmit}>
             <label className='label' for='title'>Title: </label>
             <div className='control'>
@@ -300,7 +301,7 @@ class EntryForm extends React.Component {
                 value={this.state.additional_observations}
                 />
             </div>
-            <br />
+
             <div className='control'>
               <input className='button is-info is-outlined is-medium' type='submit' />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <button className='button is-danger is-outlined is-medium' onClick={()=> this.props.toggleState('entriesListIsVisible', 'addEntryIsVisible')}>Cancel</button>
