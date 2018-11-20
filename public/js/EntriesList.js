@@ -1,26 +1,29 @@
 class EntriesList extends React.Component {
   render(){
-
     return(
 
         <div className="column is-centered">
-
-          <div>
-            <h3>Study Overview</h3>
+          <div className="overview">
+            <h3 className="title is-4">Study Overview</h3>
 
             <div>
-              <h3>Title: </h3>
-              <h3>Study Descritption: </h3>
-              <h3>Location: </h3>
-
+              <h3 className="subtitle is-6">Title: {this.props.entries[0].title}</h3>
+              <h3 className="subtitle is-6">Study Descritption: A study on the Redmond Forge Stream.</h3>
+              <h3 className="subtitle is-6">Location: {this.props.entries[0].location}</h3>
             </div>
           </div>
+
+          <button
+                className='add button is-success is-medium' onClick={()=>this.props.toggleState('addEntryIsVisible', 'entriesListIsVisible')}>
+                  <h3 className="plus">+</h3>
+          </button>
+
 
           <table className="table is-multilined is-bordered is-striped is-hoverable is-fullwidth">
             <thead>
               <tr>
                 <th>
-                  <h2><strong>id #</strong></h2>
+                  <h2><strong>Entry id #</strong></h2>
                 </th>
                 <th>
                     <h2><strong>Meters Downstream</strong></h2>

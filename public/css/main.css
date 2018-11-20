@@ -17,7 +17,12 @@ header {
   border: 1px solid rgb(100, 205, 109);
   color: rgb(100, 205, 109);
 } */
+.overview {
+  border: 1px dashed dodgerblue;
+  padding: 5px;
+}
 .add {
+  margin: 10px;
   border-radius: 50%;
   font-weight: bold;
   height: 42px;
@@ -37,7 +42,7 @@ p {
   font-size: 1.2rem;
   padding-left: 2.8rem;
 }
-.title {
+.apptitle {
   color: ghostwhite;
 }
   /* .container {
@@ -48,14 +53,10 @@ p {
   height: 15px;
   width: 20px;
 }
-<<<<<<< HEAD
-.container {
-  background-color: rgb(140, 208, 208);
-=======
+
 .btn-delete {
   margin-left: 72%;
   margin-top: -45px;
->>>>>>> e722b07afa294559459315f98355318fcdf3edd6
 }
 
 
