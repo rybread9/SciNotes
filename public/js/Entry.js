@@ -74,7 +74,7 @@ class Entry extends React.Component {
            ? <EntryForm toggleState={this.toggleState} entry={this.props.entry} handleSubmit={this.props.handleSubmit}/>
             : ''}
         </div>
-      // </div>
+      </div>
     )
   }
 }
