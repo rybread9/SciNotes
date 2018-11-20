@@ -1,11 +1,17 @@
+/* @font-face { font-family: 'Exan-Regular'; src: utrl('Exan-Regular.ttf'); }
+@font-face { font-family: 'Exan-Regular'; font-weight: bold; src: url('Exan-Regular.ttf');} */
+@import url('https://fonts.googleapis.com/css?family=Exo');
 
 body {
   background: ghostwhite;
+  font-family: 'Exan-Regular', Fallback, sans-serif;
+  font-weight: bold;
 }
 header {
   background-color: dodgerblue;
   border-top: 2px solid ghostwhite;
   border-bottom: 2px solid dodgerblue;
+  font:
   /* background-color: rgb(100, 204, 109); */
   /* border-radius: 4rem; */
   padding-left: 1%;
