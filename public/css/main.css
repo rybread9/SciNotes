@@ -18,10 +18,27 @@ header {
 }
 .overview {
   border: 1px dashed dodgerblue;
-  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+}
+.overviewcontent {
+  color: dodgerblue;
+  padding: 15px;
+}
+.overviewheader {
+  background-color: dodgerblue;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  width: 100%;
+  height: 35px;
+  padding: 4px;
+}
+.overviewheader > h3 > span {
+  color: white;
+  font-weight: bold;
 }
 .add {
-  margin: 10px;
+
+  margin-left: -5%;
   border-radius: 50%;
   font-weight: bold;
   height: 42px;
@@ -41,7 +58,7 @@ p {
   font-size: 1.2rem;
   padding-left: 2.8rem;
 }
-.apptitle {
+.title {
   color: ghostwhite;
 }
   /* .container {
