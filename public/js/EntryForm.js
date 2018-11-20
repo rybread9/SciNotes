@@ -284,7 +284,6 @@ class EntryForm extends React.Component {
           </div>
           : ''}
             
-            <h1>Additional Observations</h1>
             <label className='label' for='additional_observations'>Additional Observations: </label>
             <div className='control'>
               <textarea
