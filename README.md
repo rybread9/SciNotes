@@ -1,24 +1,28 @@
-# README
+# [SciNotes](https://scinotes.herokuapp.com/)
+![header](/public/images/header.png)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### About
+SciNotes is an app created by [Rylen del Rio](https://github.com/rybread9) and [Krystal Williams](https://github.com/Asterika) with the needs of scientists in mind. With an attempt to bridge the gap between web development and scientific exploration, SciNotes is a platform that makes recording data easier and more efficient. Anyone can create, update, and delete data in order to keep your notes organized and easy to access.
 
-Things you may want to cover:
+Going out into the field? Give it a whirl [here](https://scinotes.herokuapp.com/)!
 
-* Ruby version
+### Technologies Used
+* Ruby on Rails
+* React.js
+* Heroku
+* HTML/CSS
+* PostgreSQL
+* Bulma
+* Postman
 
-* System dependencies
+### Problems Solved
+* Long forms solved by collapsable sections.
+* Optimizing for mobile.
+* Relocating edit and delete button to show page.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Future Optimizations
+* Chart options for visualizing data.
+* Responsive design for tablet and desktop.
+* Flexible assignment of fields for input.
+* Ability to create multiple studies.
+* About page detailing app usage.
