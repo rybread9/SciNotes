@@ -25,4 +25,4 @@ Going out into the field? Give it a whirl [here](https://scinotes.herokuapp.com/
 * Responsive design for tablet and desktop.
 * Flexible assignment of fields for input.
 * Ability to create multiple studies.
-* About page.
+* About page detailing app usage.
