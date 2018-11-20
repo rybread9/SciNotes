@@ -64,6 +64,20 @@ class EntryForm extends React.Component {
       [st]: !this.state[st]
     })
   }
+  // getWater () {
+  //   return (
+      // <div waterIsVisible={this.state.waterIsVisible}>
+      //   <label className='label' for='meters_downstream'>Meters Downstream: </label>
+      //   <div className='control'><input className='input is-small is-info is-hovered is-rounded'
+      //       type='number'
+      //       id='meters_downstream'
+      //       ref='meters_downstream'
+      //       onChange={this.handleChange}
+      //       value={this.state.meters_downstream}
+      //       />
+      //   </div>
+  //   )
+  // }
   render(){
     return(
       <div className=" form columns is-mobile is-centered">
@@ -102,19 +116,21 @@ class EntryForm extends React.Component {
                 value={this.state.air_temperature}
                 />
             </div>
-            <h1 waterIsVisible={this.state.waterIsVisible} onClick={()=> this.toggleState('waterIsVisible')}>Water</h1>
-            <div waterIsVisible={this.state.waterIsVisible}>
-              <label className='label' for='meters_downstream'>Meters Downstream: </label>
-              <div className='control'>
-                <input
-                  className='input is-small is-info is-hovered is-rounded'
-                  type='number'
-                  id='meters_downstream'
-                  ref='meters_downstream'
-                  onChange={this.handleChange}
-                  value={this.state.meters_downstream}
-                  />
-              </div>
+
+            <h1 onClick={()=> this.toggleState('waterIsVisible')}>Water</h1>
+            { this.state.waterIsVisible
+            ? <div waterIsVisible={this.state.waterIsVisible}>
+                    <label className='label' for='meters_downstream'>Meters Downstream: </label>
+                    <div className='control'><input className='input is-small is-info is-hovered is-rounded'
+                        type='number'
+                        id='meters_downstream'
+                        ref='meters_downstream'
+                        onChange={this.handleChange}
+                        value={this.state.meters_downstream}
+                        />
+                    </div>
+
+
               <label className='label' for='stream_width'>Stream Width: </label>
               <div className='control'>
                 <input
@@ -182,6 +198,7 @@ class EntryForm extends React.Component {
                   />
               </div>
             </div>
+            : ''}
 
             <h1>Sediment</h1>
             <label className='label' for='sediment_size'>Sediment Size: </label>
